@@ -8,14 +8,33 @@ namespace TicTocToe
 {
     class TicTocToe
     {
-        public void CreatingBoard()
+        public char[] CreatingBoard()
         {
-            char[] size = new char[10];
-            int i;
-            for (i = 1; i < 10; i++)
+            char[] array = new char[10];
+            for (int i = 1; i < array.Length; i++)
             {
-                size[i] = ' ';
+                array[i] = ' ';
             }
-           
+            return array;
+        }
+
+        public char Player()
+        {
+            Console.WriteLine("Enter the character either X or O");
+            char user = Convert.ToChar(Console.ReadLine());
+            return user;
+        }
+
+        public char ComputerReturnLetter(char user)
+        {
+            char computerReturn;
+            if (user == 'X')
+                computerReturn = 'O';
+            else
+            {
+                computerReturn = 'X';
+            }
+            return computerReturn;
+        }
     }
 }
